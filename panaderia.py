@@ -31,3 +31,8 @@ def tipo (self, valor):
 
 def __str__ (self):
     return f"{self.__nombre}, - ${self.__precio} ({self.__tipo})"
+
+def calcular_subtotal(self, cantidad):
+    if cantidad <= 0:
+        raise ValueError("La cantidad debe ser mayor a 0.")
+    return self.__precio * cantidad
