@@ -149,6 +149,28 @@ def main():
         Producto("Pan de campo", 800, "unidad"),
         Producto("Pan rallado", 2000, "peso")
         ]
+#========== nivel 5.2 ===========
+    while True:
+        print("Opciones del menú:")
+        print ("=== PANADERÍA ===")
+        print ("1. Ver productos disponibles")
+        print ("2. Realizar venta")
+        print ("3. Ver saldo de caja")
+        print ("4. Salir")
+        opcion = input ("Selecciona una opcion: ")
+
+#========== nivel 5.3 ===========
+        if opcion == "1":
+            print("===========Produtos disponible===========")
+            for i, producto in enumerate (lista_producto, start = 1):
+                print (f"{i}. {producto}")
+#========== nivel 5.4 ===========
+        elif opcion == "2":
+            print("---Venta nueva---")
+            mi_venta = Venta()
+            for i, prod in enumerate (lista_producto, start = 1):
+                print (f"{i}{prod.nombre}- ${prod.precio} ({prod.tipo})")
+
 
 if __name__ == "__main__":
     main()
