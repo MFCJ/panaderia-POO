@@ -89,6 +89,16 @@ class Venta:
             print (item)
         print (f"total del dia: ${self.__total}")
         
+#========== nivel 4.2 ===========
+    def calcular_vuelto (self, dinero_recibido):
+        vuelto = dinero_recibido - self.__total
+        if vuelto < 0:
+            falta = (-1) *  vuelto # ó falta = abs(vuelto)
+            raise ValueError (f"Error, el dinero no es suficiente, faltan ${falta}")
+        print (f"El vuelto es {vuelto}")
+        return vuelto
+
+        
 #========== nivel 4 ===========
 class Caja:
     def __init__(self, dinero_inicial = 50000):
