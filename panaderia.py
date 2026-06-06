@@ -83,3 +83,8 @@ class Venta:
     @property
     def total (self):
         return self.__total
+    def mostrar_resumen(self):
+        print ("_________________________Resumen del dia_________________________")
+        for item in self.__items:
+            print (item)
+        print (f"total del dia: ${self.__total}")
