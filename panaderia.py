@@ -138,3 +138,17 @@ class Caja:
             raise ValueError ("Tu monto es superior al ${self.__dinero_disponible}")
         self.__dinero_disponible -= monto
         print (f"Se sacaron de la caja: ${monto}")
+        
+#========== nivel 5 ===========
+def main():
+    caja = Caja(50000)
+    lista_producto = [
+        Producto("Pan Francés", 500, "unidad"),
+        Producto("Medialuna", 300, "unidad"),
+        Producto("Factura", 400, "unidad"),
+        Producto("Pan de campo", 800, "unidad"),
+        Producto("Pan rallado", 2000, "peso")
+        ]
+
+if __name__ == "__main__":
+    main()
