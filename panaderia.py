@@ -88,3 +88,25 @@ class Venta:
         for item in self.__items:
             print (item)
         print (f"total del dia: ${self.__total}")
+        
+#========== nivel 4 ===========
+class Caja:
+    def __init__(self, dinero_inicial = 50000):
+        self.__dinero_disponible = dinero_inicial
+    @property
+    def dinero_disponible(self):
+        return self.__dinero_disponible
+    
+    def agregar_dinero(self, monto):
+        if monto <= 0:
+            raise ValueError ("Error, monto negativo o cero")
+        self.__dinero_disponible += monto
+        print (f"Se agregaron a la caja: ${monto}")
+    
+    def restar_dinero (self, monto):
+        if monto <= 0:
+            raise ValueError ("Error, monto negativo o cero")
+        if self.__dinero_disponible < monto:
+            raise ValueError ("Tu monto es superior al ${self.__dinero_disponible}")
+        self.__dinero_disponible -= monto
+        print (f"Se sacaron de la caja: ${monto}")
