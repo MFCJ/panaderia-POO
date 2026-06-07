@@ -168,9 +168,17 @@ def main():
         elif opcion == "2":
             print("---Venta nueva---")
             mi_venta = Venta()
-            for i, prod in enumerate (lista_producto, start = 1):
-                print (f"{i}{prod.nombre}- ${prod.precio} ({prod.tipo})")
-
+            while True:
+                for i, prod in enumerate (lista_producto, start = 1):
+                    print (f"{i}{prod.nombre}- ${prod.precio} ({prod.tipo})")
+                seleccion = input("Selecciona una opcion o 0 para salir: ")
+                if seleccion == "0":
+                    break
+                try:
+                    numero = int (seleccion)
+                    producto_elegido = lista_producto[numero - 1]
+                except:
+                    print ("Error, colocaste una opcion no valida")
 
 if __name__ == "__main__":
     main()
