@@ -168,6 +168,7 @@ def main():
         elif opcion == "2":
             print("---Venta nueva---")
             mi_venta = Venta()
+
             while True:
                 for i, prod in enumerate (lista_producto, start = 1):
                     print (f"{i}{prod.nombre}- ${prod.precio} ({prod.tipo})")
@@ -177,8 +178,17 @@ def main():
                 try:
                     numero = int (seleccion)
                     producto_elegido = lista_producto[numero - 1]
-                except:
-                    print ("Error, colocaste una opcion no valida")
+                    if producto_elegido.tipo == "unidad":
+                        cantidad = float (input("Cuantos quieres? "))
+                    else:
+                        cantidad = float (input("Cuantos kilos? "))
 
+                    mi_venta.agregar_item(producto_elegido, cantidad)
+                    print (f"Producto agregado: {producto_elegido} * {cantidad}")
+
+                except ValueError:
+                    print("Error: Debe ingresar un número válido")
+                except IndexError:
+                    print("Error: Número de producto inválido")
 if __name__ == "__main__":
     main()
